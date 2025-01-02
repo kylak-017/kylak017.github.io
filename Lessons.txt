@@ -1,0 +1,46 @@
+#GSAP object is an access point to all animations.(sprite)
+
+#GSAP object can create Tweens and can upload these to timelines.
+
+#Tweens: Can change a mutliple properties of an object (like an action) across various time intervals
+ 
+    #Has a virtual playhead(that has a timeline) --> applies the action according to each time range.
+
+    #gsap.to("target", {vars object (x:750, duration: 3)})
+        #the target string is basically like (.star) and will target everything with that tag.
+        #x- translate across x axis
+        #duration- the time range
+        #scale- how to change the size
+        #rotation- the angle
+        #fill- the color
+        #stagger- how much staggering it can do between objects
+    
+    #gsap.from()
+    #gsap.fromTo()
+
+#Timeline: is a container for multiple tweens
+    
+    #Timelines can repeat, reverse, or go forward.
+    #Tweens can overlap as well within the timeline.
+    #You can nest timelines inside of other timelines. 
+
+#For three, you need a camera, a renderer, and a scene.
+    #Camera
+    new Three.PerspectiveCamera(FOV, aspect ratio, near, far)
+        #FOV: field of view, how much of a scene is displayed at any given moment, in angle (radians)
+        #aspect ratio: just use width/height
+        #objects only at near <distance <far will be shown.
+    const renderer = new THREE.WebGLRenderer();
+        #setting up the rendering
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+
+    mountRef.current.appendChild(renderer.domElement);
+
+#Box Geometry
+    BoxGeometry(points, faces, fill)
+    #mesh is an object that takes up a geometry mold
+    
+#Var vs const vs let
+#var is a globally declared variable
+#const must be initialized and declared with a value

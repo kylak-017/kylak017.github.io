@@ -1,0 +1,83 @@
+body {
+	margin: 0;
+	padding: 200px;
+	font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: white;
+    width:100%;
+    height:100%;
+}
+
+threejs-canvas {
+    position: absolute;
+    background-color: transparent;
+    display: block;
+    width:100%;
+    height:100%;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.navbar {
+  position: fixed;  /* Fix the navbar at the top of the page */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;  /* Dark background for the navbar */
+  z-index: 1000;  /* Ensure it's on top of other elements */
+  padding: 10px 0;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;  /* Space out items on the left and right */
+  align-items: center;
+  padding: 0 20px;  /* Add some padding to the left and right */
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for each individual link */
+.navbar-links li {
+  margin-left: 20px;  /* Add some space between links */
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  display: block;
+  transition: background-color 0.3s ease;  /* Smooth transition for hover effect */
+}
+
+/* Hover effect for links */
+.navbar-links a:hover {
+  background-color: #575757;  /* Slightly lighter background on hover */
+  border-radius: 4px;  /* Round corners for the hover effect */
+}
+
+/* Responsive design: Navbar adapts to smaller screens */
+@media (max-width: 768px) {
+  .navbar-container {
+      flex-direction: column;  /* Stack the items vertically */
+      align-items: flex-start;  /* Align items to the left */
+  }
+
+  .navbar-links {
+      flex-direction: column;  /* Stack links vertically on small screens */
+      margin-top: 10px;
+  }
+
+  .navbar-links li {
+      margin-left: 0;  /* Remove left margin for stacked links */
+      margin-bottom: 10px;
+  }
+}
