@@ -3,12 +3,17 @@ const path = require('path'); //handles file calling and retrieving
 const cors = require('cors');
 const admin = require("firebase-admin");
 const app = express();
+
 const PORT = 3000;
 
+const serviceAccount = require('./config/serviceAccountKey.json');
 admin.initializeApp({
-    credential: admin.credential.applicationDefault(),
-  });
-  
+  credential: admin.credential.cert(serviceAccount)
+});
+
+
+// Initialize Firebase Admin SDK (do this ONCE at the start of your server)
+
 
 
 //API: The "menu" of the backend kitchen. Brings the necessary files that the website asks for and derives it from the public source folder
@@ -16,9 +21,12 @@ admin.initializeApp({
     //Usually active as HTTP ports, so that the kitchen knows from which client they have to get orders from and serve obejcts to. 
     
     //USE: About using session
-    app.use(cors({
-        origin: 'http://127.0.0.1:5174' // Specify the client's origin
-    }));
+    const corsOptions = {
+      origin: 'http://127.0.0.1:5174', // Replace with your frontend's origin
+      methods: ['GET', 'POST'], // Specify allowed methods
+      allowedHeaders: ['Content-Type', 'Authorization'], // Include 'Authorization'
+    };
+    app.use(cors(corsOptions));    
     app.use(express.json());
     app.use(express.static(path.join(__dirname, 'public'))); //retrieves all necessary files from public
     app.use('/public', express.static(path.join(__dirname, 'public')));
@@ -62,21 +70,30 @@ admin.initializeApp({
 
       
 
-    app.post("/verify-token", async (req, res) => {
-        const idToken = req.body.token;
-        
-      
-        try {
-          const decodedToken = await admin.auth().verifyIdToken(idToken);
-          console.log("Request received:", idToken);
-          res.json({ message: "User verified", uid: decodedToken.uid });
-        } catch (error) {
-          console.error("Error verifying token:", error);
-          console.log("Request received:", idToken);
-          res.status(401).json({ error: "Unauthorized" });
-        }
-      });
-      
+    app.post('/verify-token', async (req, res) => {
+      const idToken = req.headers.authorization?.split('Bearer ')[1]; // Or req.headers['x-access-token']
+    
+      if (!idToken) {
+        return res.status(401).json({ error: 'No token provided' });
+      }
+    
+      try {
+        const decodedToken = await admin.auth().verifyIdToken(idToken);
+        // Token is valid.
+        // decodedToken contains user information (uid, email, etc.)
+        console.log("Decoded Token:", decodedToken);
+    
+        // Access user data from the database
+        const userRecord = await admin.auth().getUser(decodedToken.uid)
+        console.log('userRecord: ', userRecord)
+    
+        // You can now access user data and grant access to resources
+        res.json({ message: 'Token is valid', user: decodedToken, userData: userRecord }); // or some data
+      } catch (error) {
+        console.error("Error verifying token:", error);
+        return res.status(401).json({ error: 'Unauthorized', details: error.message });
+      }
+    });
     
 
     app.listen(PORT, () => {

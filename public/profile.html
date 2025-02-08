@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/profile.css">
+    <title>Three.js App</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-container">
+            <ul class = "navbar-links">
+                <li><a href="https://chatgpt.com/c/67768194-2900-800e-92fe-1594cd7dde3f">We Are...</a></li> 
+                <li><a href="https://chatgpt.com/c/67768194-2900-800e-92fe-1594cd7dde3f">Initiatives</a></li>
+                <li><a href="https://chatgpt.com/c/67768194-2900-800e-92fe-1594cd7dde3f">Leaderboard</a></li>
+                <li><a href="https://chatgpt.com/c/67768194-2900-800e-92fe-1594cd7dde3f">Community Events</a></li>
+                <li><a href="https://chatgpt.com/c/67768194-2900-800e-92fe-1594cd7dde3f">My Garden</a></li>
+                <button id="login-Button">Profile</button>
+    
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id = "first-container" style="display: block;">
+            <h1 class="pixelated-text">Welcome, Gardener!</h1>
+            <p class="pixelated-text">Are you ready to plant your seed of action?</p>
+            <button id="action-button" class = "buttons">Let's Begin 🌱</button>
+        </div>
+        
+
+        
+        <div id="avatar-container" style="display: none;">
+            <h1 class="pixelated-text">Choose your avatar:</h1>
+            <div id ="avatar-selection" class="avatar-selection">
+                <img class="avatar" id="sprite1" src="sprite1.png" alt="Gardener Sprite 1">
+                <img class="avatar" id="sprite2" src="sprite2.png" alt="Gardener Sprite 2">
+                <img class="avatar" id="sprite3" src="sprite3.png" alt="Gardener Sprite 3">
+            </div>
+            <button id="choose-sprite-button" class="buttons">Confirm</button>
+        </div>
+
+        <div id = "information-container" style="display: none;">
+            <h1 class="pixelated-text">Where are you from?:</h1>
+
+            <label for="country">Select Your Country:</label>
+            <select id="country">
+                <option value="">-- Select Country --</option>
+                <option value="USA">United States</option>
+                <option value="India">India</option>
+                <option value="UK">United Kingdom</option>
+                <option value="Canada">Canada</option>
+                <option value="Japan">Japan</option>
+                <option value="Australia">Australia</option>
+                <option value="Germany">Germany</option>
+                <option value="Brazil">Brazil</option>
+            </select>
+            <button id = "confirm-country" class = "buttons">Confirm</button>
+
+
+
+        </div>
+
+        <div id = "tutorial-container" style="display: none;">
+            
+        </div>
+
+    </div>
+        
+    <script type="module" src="public/src/profile.js"></script>
+   
+    
+   
+
+    
+</body>
+</html>
