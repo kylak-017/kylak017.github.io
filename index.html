@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/styles/main.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="icon" href="/models/2.png" type="image/x-icon">
     <title>Three.js App</title>
 </head>
 <canvas id="threejs-canvas"></canvas>
 <body>
     <div class="navbar">
         <div class="navbar-container">
+            <div class = "navbar-link">
             <ul class = "navbar-links">
-                <li><a href="https://chatgpt.com/c/67768194-2900-800e-92fe-1594cd7dde3f">We Are...</a></li>
-                <li><a href="https://chatgpt.com/c/67768194-2900-800e-92fe-1594cd7dde3f">Initiatives</a></li>
-                <li><a href="https://chatgpt.com/c/67768194-2900-800e-92fe-1594cd7dde3f">Newsletter</a></li>
-                <button id="signup-button" class = "buttons">Sign Up</button>
-                <button id="login-Button" class = "buttons">Log In</button>
-    
+                <button id = 'about-button' class = 'buttons'>About</button>
+                <button id = 'init-button' class = 'buttons'>Initiatives</button>
+                <button id = 'news-button' class = 'buttons'>Newsletter</button>
+                <button id="signup-button" class = "buttons">Login</button>
             </ul>
+            </div>
+
+            <div class="navbar-logo">
+                <img src="/models/2.png" alt="Logo" class="logo">
+            </div>
         </div>
     </div>
         
