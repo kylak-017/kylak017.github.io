@@ -10,13 +10,13 @@
 
 
 body {
-  background: #e0f7d4;
+  background: #fae1fa;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   font-family: 'Press Start 2P', cursive;
-  color: #344e41;
+  color: #ad016b;
   text-align: center;
 }
 
@@ -42,7 +42,7 @@ body {
 
 .pixelated-text {
   font-size: 24px;
-  text-shadow: 2px 2px #a3be8c;
+  text-shadow: 2px 2px #ffffff;
   margin-bottom: 16px;
   animation: popIn 1s ease forwards;
 }
@@ -53,15 +53,17 @@ body {
   margin-top: 20px;
 }
 .buttons {
-  background-color: #95d5b2;
+  background-color: #e979a6;
   border: none;
-  padding: 12px 20px;
+  margin-top: 50px;
+  padding: 15px 22px;
   font-size: 16px;
-  color: #1b4332;
+  color: #580042;
   border-radius: 12px;
+  font-family: 'Press Start 2P', cursive;
   justify-items: center;
   justify-content: center;
-  box-shadow: 2px 2px #52b788;
+  box-shadow: 2px 2px #ffffff;
   cursor: pointer;
   transition: transform 0.3s;
 }

@@ -7,8 +7,18 @@ const canvas = document.getElementById("threejs-canvas");
 // Scene
 const scene = new THREE.Scene();
 
+//Background
+const loader = new THREE.TextureLoader();
+loader.load('/models/stars.jpg', function(texture)
+            {
+             scene.background = texture;  
+            });
+
+
 // Renderer
-const renderer = new THREE.WebGLRenderer();
+const renderer = new THREE.WebGLRenderer({
+  alpha: true,
+});
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);  // Append renderer to the body directly
 
@@ -18,7 +28,8 @@ camera.position.z = 1;
 
 // Light
 const light = new THREE.DirectionalLight(0xffffff, 1);
-light.position.set(0, 10, 10);
+light.position.set(10, 10, 10);
+light.intensity = 3;
 scene.add(light);
 
 //Controls
@@ -28,11 +39,13 @@ controls.dampingFactor = 0.25;
 controls.screenSpacePanning = false;
 
 // Load Model
-async function loadModel(path) {
+
+async function loadModel(path, position = { x: 0, y: 0, z: 0 }) {
     const loader = new GLTFLoader();
     try {
       const gltf = await loader.loadAsync(path);
       const model = gltf.scene; // Get the 3D model from the loaded gltf
+      model.position.set(position.x, position.y, position.z); // Set the model's position
       scene.add(model);
 
       
@@ -57,8 +70,10 @@ async function loadModel(path) {
 }
 
 // Usage
-const modelPath = '/models/GalaxyS10.gltf'; // Or '/models/my-model.glb' for binary
-loadModel(modelPath);
+const earth = './models/globe.glb'; // Or '/models/my-model.glb' for binary
+const mercury = './models/mer.glb'; // Or '/models/my-model.glb' for binary
+loadModel(earth, { x: 3, y: 0, z: 0 });
+loadModel(mercury, { x: -3, y: 2, z: 0 });
 
 
 
