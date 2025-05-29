@@ -1,7 +1,7 @@
 import { auth, provider } from "./firebaseConfig";
 import { signInWithPopup, getIdToken } from "firebase/auth";
 
-document.getElementById("login-Button").addEventListener("click", async () => {
+document.getElementById("signup-button").addEventListener("click", async () => {
     try {
         const result = await signInWithPopup(auth, provider);
         const user = result.user;

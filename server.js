@@ -6,7 +6,7 @@ const app = express();
 
 const PORT = 3000;
 
-const serviceAccount = require('./config/serviceAccountKey.json');
+const serviceAccount = require('./serviceAccountKey.json');
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
 });
@@ -50,7 +50,7 @@ admin.initializeApp({
     });
 
     app.get('/api/model', (req,res) => {
-        res.sendFile(path.join(__dirname, 'public/models/GalaxyS10.gltf'));
+        res.sendFile(path.join(__dirname, 'public/models/bottle.gltf'));
     });
 
     /*
