@@ -1,11 +1,14 @@
 import { auth, provider } from "./firebaseConfig";
 import { signInWithPopup, getIdToken } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
+
 
 document.getElementById("signup-button").addEventListener("click", async () => {
     try {
+
         const result = await signInWithPopup(auth, provider);
         const user = result.user;
-
+        
         // Get Firebase ID token
         const idToken = await getIdToken(user); // Correctly retrieves the token
         console.log("User ID Token:", idToken);

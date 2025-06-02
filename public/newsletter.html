@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/newsletter.css">
+    <title>Three.js App</title>
+</head>
+
+
+<body>
+   <div class="navbar">
+        <div class="navbar-container">
+            <ul class = "navbar-links">
+                <button id = 'about-button' class = 'buttons'>About</button>
+                <button id = 'init-button' class = 'buttons'>Initiatives</button>
+                <button id = 'news-button' class = 'buttons'>Newsletter</button>
+                <button id="signup-button" class = "buttons">My Learning</button>
+    
+            </ul>
+            <div class = "profile-icon"> <!--this is where the profile icon will be, but should be hidden if not logged in-->
+                <img src="/models/profile-icon.png" alt="Profile Icon" class="profile-icon">
+            </div>
+            <div class="navbar-logo">
+                <img src="/models/2.png" alt="Logo" class="logo">
+            </div>
+    </div>
+    </div>
+    <!--This is one entry-->
+    <div class = "container-entry">
+        <h2 class = "title-entry"> Non-CT club, GEMS participates in volunteer work at Baraka Library, Itaewon </h1>
+        <h3 class = "date-entry"> 04/16/2025</h3>
+        <div class = "image-entry">
+            <div class="mySlides">
+                <div class="numbertext">1 / 6</div>
+                <img src="../photos/1.png" style="width:100%; height: 30%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">2 / 6</div>
+                <img src="../photos/2.png" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">3 / 6</div>
+                <img src="../photos/3.png" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">4 / 6</div>
+                <img src="../photos/4.png" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">5 / 6</div>
+                <img src="../photos/5.png" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">6 / 6</div>
+                <img src="../photos/6.png" style="width:100%">
+            </div>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            <!-- Image text -->
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+        </div>
+        <div class = "content-entry">
+        <p>
+            During the week of spring break (3/25~3/27), members of the non-CT club, GEMS (Girls In Engineering, Mathematics, Science): Kyla Kim (G10), Jihu Kim (G10), Claire Ma(G10), Amy Son(G10), Jasmine Park (G9), led a volunteering event at the Baraka Small Library. The Baraka Small Library is located in a multicultural neighborhood called Itaewon serving as an after-school center for students whose parents work full-time and cannot care for them after school.
+            <br>
+            <br>
+            As the club’s purpose is to give more opportunities for girls to learn STEM subjects and pursue their passions, club members scheduled a 3-day free educational curriculum that consisted of multiple science experiments including the “Make It Glow” experiment, the “Egg Drop Challenge” experiment, and the “Make It Slimy” experiment, exposing the girls to a vast range of subjects including chemistry and physics.
+            <br>
+            <br>
+            The first day of the program included an introduction on what STEM was by playing a quiz about female scientists, programmers, and pioneers in the fields of STEM. We proceeded to explore both male and female pioneers when the girls started questioning the frames we used for each pioneer’s photos. Then, we started a series of experiments. Day 1 was the “Make It Glow” experiment, where students explored the luminol oxidation reaction. They formed hypotheses and witnessed the beauty of chemistry in action through glowing chemical reactions.On Day 2, we held the “Egg Drop Challenge,” equipping students with straws, cups, and limited tape to protect an egg from impact. This hands-on challenge introduced core physics concepts like momentum and energy conservation, while also helping students distinguish physics from chemistry. On Day 3, we wrapped up with “Make It Slimy,” where students made slime and learned about polymer-borax interactions. The excitement was high, and all materials were donated so students could recreate the experiment at home.
+            <br>
+            <br>
+            Overall, volunteering at the Baraka Small Library provided GEMS with a humbling experience; we learned that education, especially education as a female, is still a privilege and not a basic right in many cultures and families. As STEM representation among females grows, we will continue to support women and girls from all over the world to get an equal opportunity to pursue STEM and make a wonderful difference in the world.
+
+        </p>
+    
+        </div>
+    </div>
+
+    
+
+</body>
+<script src="/src/newsletter.js"></script>
+</html>

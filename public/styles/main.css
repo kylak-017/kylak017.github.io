@@ -103,19 +103,28 @@ body {
   transform: scale(1.1);
 }
 
-/* Navbar Styles */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height:15%;
-  color: #fff;
-  z-index: 1000;
-  padding: 16px 0;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+.navbar-logo{
+  float: left;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffc118; /* Energetic yellow */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-left: 60px;
+  height: 50%;
+
 }
 
+.logo{
+  width: 50%;
+  height: 50%;
+  border-color: #ffc118;
+  border-width: 2px;
+  border-style: solid;
+  margin-top: 12px;
+  border-radius: 10%;
+  
+}
 
 .navbar {
   position: fixed;  /* Fix the navbar at the top of the page */
