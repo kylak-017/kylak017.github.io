@@ -20,6 +20,28 @@ body {
   text-align: center;
 }
 
+
+.navbar-logo{
+  float: left;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffc118; /* Energetic yellow */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-left: 600px;
+  height: 80%;
+
+}
+
+.logo{
+  width: 80%;
+  height: 80%;
+  border-color: #ffc118;
+  border-width: 2px;
+  border-style: solid;
+  margin-top: 12px;
+  
+}
 .contianer{
   animation: fadeIn 2s ease-in-out;
 }
@@ -69,31 +91,10 @@ body {
   margin-right: 10px;
 }
 
+
 .action-button:hover {
   background-color: #52b788;
   transform: scale(1.1);
-}
-
-.navbar-logo{
-  float: left;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #ffc118; /* Energetic yellow */
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-left: 600px;
-  height: 80%;
-
-}
-
-.logo{
-  width: 80%;
-  height: 80%;
-  border-color: #ffc118;
-  border-width: 2px;
-  border-style: solid;
-  margin-top: 12px;
-  
 }
 
 .navbar {
