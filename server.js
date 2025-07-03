@@ -1,5 +1,4 @@
 
-
 const express = require('express');
 const path = require('path'); //handles file calling and retrieving
 const cors = require('cors');
@@ -8,13 +7,34 @@ const app = express();
 
 const PORT = 3000;
 
-const serviceAccount = require('./serviceAccountKey.json');
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
+
 
 
 // Initialize Firebase Admin SDK (do this ONCE at the start of your server)
+const { SecretManagerServiceClient } = require('@google-cloud/secret-manager');
+
+const client = new SecretManagerServiceClient();
+async function getServiceAccountKey() {
+  const name = 'projects/gems-350b8/secrets/my-service-account-key/versions/latest';
+  const [version] = await client.accessSecretVersion({ name }); //get all the version of the secret so far
+  console.log("Accessed Secret Manager version:", version.name);
+  
+  const payload = version.payload.data.toString('utf8');
+  const serviceAccount = JSON.parse(payload); //get the actual secret from the version presented
+
+   admin.initializeApp({
+        credential: admin.credential.cert(serviceAccount),
+        databaseURL: 'https://xxxxx.firebaseio.com' // Replace with your database URL
+  });
+
+  console.log("Firebase Admin initialized using Secret Manager.");
+
+}
+
+getServiceAccountKey()
+.then(() => {
+
+
 
 
 
@@ -28,6 +48,9 @@ admin.initializeApp({
       methods: ['GET', 'POST'], // Specify allowed methods
       allowedHeaders: ['Content-Type', 'Authorization'], // Include 'Authorization'
     };
+
+    
+
     app.use(cors(corsOptions));    
     app.use(express.json());
     app.use(express.static(path.join(__dirname, 'public'))); //retrieves all necessary files from public
@@ -105,4 +128,4 @@ admin.initializeApp({
     
 
     
-    
+    });

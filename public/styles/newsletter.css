@@ -264,6 +264,7 @@ p{
   background-color: #ffc118;  /* Dark background for the navbar */
   z-index: 1000;  /* Ensure it's on top of other elements */
   padding: 10px 0;
+  margin-bottom: 40px;
 }
 
 .navbar-container {

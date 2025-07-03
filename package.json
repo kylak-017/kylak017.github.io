@@ -4,10 +4,11 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "@google-cloud/secret-manager": "^6.0.1",
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "express-session": "^1.18.1",
-    "firebase": "^11.3.0",
+    "firebase": "^11.9.1",
     "firebase-admin": "^13.1.0",
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",

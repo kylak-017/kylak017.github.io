@@ -121,7 +121,7 @@ body {
   border-color: #ffc118;
   border-width: 2px;
   border-style: solid;
-  margin-top: 12px;
+  margin-top: 30px;
   border-radius: 10%;
   
 }
@@ -141,6 +141,7 @@ body {
   justify-content: space-between;  /* Space out items on the left and right */
   align-items: center;
   padding: 0 20px;  /* Add some padding to the left and right */
+  margin-bottom: 20px;
 }
 
 .navbar-links {

@@ -7,7 +7,32 @@
   box-sizing: border-box;
 }
 
+.avatar-selection {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
+.avatar{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid #580042; /* Dark purple border */
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 25px 25px rgba(255, 228, 74, 0.2);
+}
+
+#choose-sprite-button{
+  align-items: right;
+}
 
 body {
   background: #fae1fa;
@@ -92,7 +117,7 @@ body {
   border-color: #ffc118;
   border-width: 2px;
   border-style: solid;
-  margin-top: 12px;
+  margin-top: 30px;
   border-radius: 10%;
   
 }
@@ -112,6 +137,7 @@ body {
   justify-content: space-between;  /* Space out items on the left and right */
   align-items: center;
   padding: 0 20px;  /* Add some padding to the left and right */
+  margin-bottom: 40px;
 }
 
 .navbar-links {
