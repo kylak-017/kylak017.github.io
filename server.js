@@ -11,6 +11,20 @@ const PORT = 3000;
 
 
 // Initialize Firebase Admin SDK (do this ONCE at the start of your server)
+// Parse the credentials from the environment variable
+const credentials = JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON);
+
+// Example: Using google-auth-library
+const {OAuth2Client} = require('google-auth-library');
+
+const client2 = new OAuth2Client(
+  credentials.web.client_id,
+  credentials.web.client_secret,
+  credentials.web.redirect_uris[0]
+);
+
+// OR: Pass credentials to other Google/Firebase SDKs as needed
+
 const { SecretManagerServiceClient } = require('@google-cloud/secret-manager');
 
 const client = new SecretManagerServiceClient();
