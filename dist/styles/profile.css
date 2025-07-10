@@ -1,0 +1,265 @@
+/* Global styles */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.avatar-selection {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.avatar{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid #580042; /* Dark purple border */
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 25px 25px rgba(255, 228, 74, 0.2);
+}
+
+#choose-sprite-button{
+  align-items: right;
+}
+
+body {
+  background: #fae1fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Press Start 2P', cursive;
+  color: #ad016b;
+  text-align: center;
+}
+
+.contianer{
+  animation: fadeIn 2s ease-in-out;
+}
+
+.first-container {
+  animation: fadeIn 2s ease-in-out;
+}
+#avatar-selection {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+.information-container {
+  animation: fadeIn 2s ease-in-out;
+}
+.tutorial-container {
+  animation: fadeIn 2s ease-in-out;
+}
+
+.pixelated-text {
+  font-size: 24px;
+  text-shadow: 2px 2px #ffffff;
+  margin-bottom: 16px;
+  animation: popIn 1s ease forwards;
+}
+/* Button Wrapper for Centering */
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.buttons {
+  background-color: #e979a6;
+  border: none;
+  margin-top: 50px;
+  padding: 15px 22px;
+  font-size: 16px;
+  color: #580042;
+  border-radius: 12px;
+  font-family: 'Press Start 2P', cursive;
+  justify-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px #ffffff;
+  cursor: pointer;
+  transition: transform 0.3s;
+  margin-right: 10px;
+}
+
+.action-button:hover {
+  background-color: #52b788;
+  transform: scale(1.1);
+}
+
+.navbar-logo{
+  float: left;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffc118; /* Energetic yellow */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-left: 60px;
+  height: 50%;
+
+}
+
+.logo{
+  width: 50%;
+  height: 50%;
+  border-color: #ffc118;
+  border-width: 2px;
+  border-style: solid;
+  margin-top: 30px;
+  border-radius: 10%;
+  
+}
+
+#information-container {
+    position: relative;
+    display: none;
+    background-color: #ffc118;
+    border-radius: 16px;
+    padding: 20px;
+    width: fit-content;
+    margin: 0 auto;
+    height: 200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    font-family: 'Press Start 2P', cursive; /* adjust as needed */
+}
+
+#information-container h1 {
+    margin-bottom: 16px;
+}
+
+#information-container label,
+#information-container select,
+#information-container button {
+    display: block;
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+#information-container select {
+    font-size: 10px;
+    margin-top: 8px;
+    border-radius: 8px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+    align-items: center;
+    position: absolute;
+    left: 26%;
+    bottom: 65px;
+    text-align: center;
+}
+
+#information-container button {
+    background-color: #fff176; /* soft yellow for contrast */
+    border: none;
+    align-items: center;
+    border-radius: 8px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+     position: absolute;
+    left: 37.5%;
+    top: 140px;
+    transition: background-color 0.2s;
+}
+
+#information-container button:hover {
+    background-color: #ffe345;
+}
+
+.navbar {
+  position: fixed;  /* Fix the navbar at the top of the page */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffc118;  /* Dark background for the navbar */
+  z-index: 1000;  /* Ensure it's on top of other elements */
+  padding: 10px 0;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;  /* Space out items on the left and right */
+  align-items: center;
+  padding: 0 20px;  /* Add some padding to the left and right */
+  margin-bottom: 40px;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for each individual link */
+.navbar-links li {
+  margin-left: 20px;  /* Add some space between links */
+}
+
+.navbar-links a {
+  color: #000000;
+  text-decoration: none;
+  padding: 8px 16px;
+  display: block;
+  transition: background-color 0.3s ease;  /* Smooth transition for hover effect */
+}
+
+/* Hover effect for links */
+.navbar-links a:hover {
+  background-color: #ffd04d;  /* Slightly lighter background on hover */
+  border-radius: 4px;  /* Round corners for the hover effect */
+}
+/* Responsive design: Navbar adapts to smaller screens */
+@media (max-width: 768px) {
+  .navbar-container {
+      flex-direction: column;  /* Stack the items vertically */
+      align-items: flex-start;  /* Align items to the left */
+  }
+
+  .navbar-links {
+      flex-direction: column;  /* Stack links vertically on small screens */
+      margin-top: 10px;
+  }
+
+  .navbar-links li {
+      margin-left: 0;  /* Remove left margin for stacked links */
+      margin-bottom: 10px;
+  }
+
+
+
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
