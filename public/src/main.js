@@ -192,7 +192,7 @@ if(newsletter){
         
 
         const loaderText2 = new FontLoader();
-        loaderText2.load( '../../node_modules/three/examples/fonts/helvetiker_regular.typeface.json', function ( font ) {
+        loaderText2.load( '/fonts/helvetiker_regular.typeface.json', function ( font ) {
 
             const color = new THREE.Color( 0xffb0fb );
 
