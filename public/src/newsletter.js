@@ -1,3 +1,4 @@
+//add in the newsletter css and the button configurations as the macbook tabs
 document.addEventListener('DOMContentLoaded', function() {
   const about = document.getElementById("about-button");
     const inita = document.getElementById("init-button");

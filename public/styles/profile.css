@@ -122,6 +122,64 @@ body {
   
 }
 
+#information-container {
+    position: relative;
+    display: none;
+    background-color: #ffc118;
+    border-radius: 16px;
+    padding: 20px;
+    width: fit-content;
+    margin: 0 auto;
+    height: 200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    font-family: 'Press Start 2P', cursive; /* adjust as needed */
+}
+
+#information-container h1 {
+    margin-bottom: 16px;
+}
+
+#information-container label,
+#information-container select,
+#information-container button {
+    display: block;
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+#information-container select {
+    font-size: 10px;
+    margin-top: 8px;
+    border-radius: 8px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+    align-items: center;
+    position: absolute;
+    left: 26%;
+    bottom: 65px;
+    text-align: center;
+}
+
+#information-container button {
+    background-color: #fff176; /* soft yellow for contrast */
+    border: none;
+    align-items: center;
+    border-radius: 8px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+     position: absolute;
+    left: 37.5%;
+    top: 140px;
+    transition: background-color 0.2s;
+}
+
+#information-container button:hover {
+    background-color: #ffe345;
+}
+
 .navbar {
   position: fixed;  /* Fix the navbar at the top of the page */
   top: 0;
