@@ -25,7 +25,6 @@ const { SecretManagerServiceClient } = require('@google-cloud/secret-manager');
 
 
 const serviceAccount = JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON);
-const { SecretManagerServiceClient } = require('@google-cloud/secret-manager');
 const client = new SecretManagerServiceClient({
   credentials: serviceAccount,
   projectId: serviceAccount.project_id,
@@ -38,7 +37,6 @@ async function getServiceAccountKey() {
   console.log("Accessed Secret Manager version:", version.name);
   
   const payload = version.payload.data.toString('utf8');
-  const serviceAccount = JSON.parse(payload); //get the actual secret from the version presented
 
    admin.initializeApp({
         credential: admin.credential.cert(serviceAccount),
