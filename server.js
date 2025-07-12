@@ -80,10 +80,9 @@ getServiceAccountKey().then(() => {
     }
   });
 
-  // --- Catch-all: serve index.html for SPA (must be last) ---
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-  });
+  app.use(express.static(path.join(__dirname, 'dist')));
+
+
 
   // --- Start server ---
   app.listen(PORT, () => {
