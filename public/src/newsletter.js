@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function ()  {
     
                 console.log("User ID Token:", idToken);
     
-                const response = await fetch("http://localhost:3000/verify-token", {
+                const response = await fetch("/verify-token", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
