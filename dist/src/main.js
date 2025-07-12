@@ -106,7 +106,7 @@ if(newsletter){
     
 
         loaderText1 = new FontLoader();
-        loaderText1.load( '/fonts/helvetiker_regular.typeface.json', function ( font ) {
+        loaderText1.load( './fonts/helvetiker_regular.typeface.json', function ( font ) {
 
             const color = new THREE.Color( 0xf7c614 );
 
@@ -192,7 +192,7 @@ if(newsletter){
         
 
         const loaderText2 = new FontLoader();
-        loaderText2.load( '/fonts/helvetiker_regular.typeface.json', function ( font ) {
+        loaderText2.load( './fonts/helvetiker_regular.typeface.json', function ( font ) {
 
             const color = new THREE.Color( 0xffb0fb );
 
@@ -275,88 +275,7 @@ if(newsletter){
         } ); //end load function
 
 
-        const loaderText3 = new FontLoader();
-        loaderText3.load( '../../node_modules/three/examples/fonts/helvetiker_regular.typeface.json', function ( font ) {
 
-            const color = new THREE.Color( 0xffb0fb );
-
-            const matDark = new THREE.MeshBasicMaterial( {
-                color: color,
-                side: THREE.DoubleSide
-            } );
-
-            const matLite = new THREE.MeshBasicMaterial( {
-                color: color,
-                transparent: true,
-                opacity: 0,
-                side: THREE.DoubleSide
-            } );
-
-            const message = 'Please LOGIN to find out more about us!';
-
-            const shapes = font.generateShapes( message, 10 );
-
-            const geometry = new THREE.ShapeGeometry( shapes );
-
-            geometry.computeBoundingBox();
-
-            const xMid = - 0.5 * ( geometry.boundingBox.max.x - geometry.boundingBox.min.x );
-
-            geometry.translate( xMid, geometry.boundingBox.max.y -20, 0 );
-
-            // make shape ( N.B. edge view not visible )
-
-            const text = new THREE.Mesh( geometry, matLite );
-            text.position.z = - 800;
-            scene.add( text );
-
-            // make line shape ( N.B. edge view remains visible )
-
-            const holeShapes = [];
-
-            for ( let i = 0; i < shapes.length; i ++ ) {
-
-                const shape = shapes[ i ]; //indexing through the shapes
-
-                if ( shape.holes && shape.holes.length > 0 ) { //if the holes exist or if the shape is a hole
-
-                    for ( let j = 0; j < shape.holes.length; j ++ ) {
-
-                        const hole = shape.holes[ j ]; 
-                        holeShapes.push( hole ); //holes are pushed into array
-
-                    }
-
-                }
-
-            }
-
-            shapes.push( ...holeShapes ); //pushed into general array of shapes
-
-            const style = SVGLoader.getStrokeStyle( 1, color.getStyle() );
-
-            const strokeText = new THREE.Group();
-
-            for ( let i = 0; i < shapes.length; i ++ ) {
-
-                const shape = shapes[ i ];
-
-                const points = shape.getPoints();
-
-                const geometry = SVGLoader.pointsToStroke( points, style );
-
-                geometry.translate( xMid, 70, -20 );
-
-                const strokeMesh = new THREE.Mesh( geometry, matDark );
-                strokeText.add( strokeMesh );
-
-            }
-
-            scene.add( strokeText );
-
-            render();
-
-        } ); //end load function
 
         renderer = new THREE.WebGLRenderer( { antialias: true } );
         renderer.setPixelRatio( window.devicePixelRatio );

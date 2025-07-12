@@ -5,8 +5,8 @@ import { FontLoader } from "/node_modules/three/examples/jsm/loaders/FontLoader.
 import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 import { SVGLoader } from "three/examples/jsm/loaders/SVGLoader.js";
 import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
-import { auth } from '../firebaseConfig.js';
-import { getRedirectResult, getIdToken, onAuthStateChanged } from '../firebaseConfig.js';
+import { auth } from './firebaseConfig.js';
+import { getRedirectResult, getIdToken, onAuthStateChanged } from './firebaseConfig.js';
 
 //All Buttons
 window.addEventListener("DOMContentLoaded", async () => {
@@ -14,6 +14,8 @@ const about = document.getElementById("about-button");
 const inita = document.getElementById("init-button");
 const newsletter = document.getElementById("news-button");
 const signupBtn = document.getElementById("signup-button");
+
+
 
 if(about){
     about.addEventListener("click", () => {
@@ -63,13 +65,13 @@ if(newsletter){
 
     
 
-        loaderBack.load ('./models/stars.jpg', function (texture) { //a function of this class function is called
+        loaderBack.load ('models/stars.jpg', function (texture) { //a function of this class function is called
             scene.background = texture; // implementing a function such that the scene's bacgkroyd is set to the the texture brought by the image.
         });
     
 
         loaderText1 = new FontLoader();
-        loaderText1.load( '/fonts/helvetiker_regular.typeface.json', function ( font ) {
+        loaderText1.load( 'fonts/helvetiker_regular.typeface.json', function ( font ) {
 
             const color = new THREE.Color( 0xf7c614 );
 
@@ -155,7 +157,7 @@ if(newsletter){
         
 
         const loaderText2 = new FontLoader();
-        loaderText2.load( '../../node_modules/three/examples/fonts/helvetiker_regular.typeface.json', function ( font ) {
+        loaderText2.load( 'fonts/helvetiker_regular.typeface.json', function ( font ) {
 
             const color = new THREE.Color( 0xffb0fb );
 
@@ -239,7 +241,7 @@ if(newsletter){
 
 
         const loaderText3 = new FontLoader();
-        loaderText3.load( '../../node_modules/three/examples/fonts/helvetiker_regular.typeface.json', function ( font ) {
+        loaderText3.load( 'three/examples/fonts/helvetiker_regular.typeface.json', function ( font ) {
 
             const color = new THREE.Color( 0xffb0fb );
 

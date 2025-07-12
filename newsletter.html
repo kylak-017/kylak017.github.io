@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/styles/newsletter.css">
+    <link rel="stylesheet" href="styles/newsletter.css">
     <link rel="icon" href="models/2.png" type="image/x-icon">
     <title>Three.js App</title>
 </head>
@@ -16,7 +16,7 @@
                 <button id = 'about-button' class = 'buttons'>About</button>
                 <button id = 'init-button' class = 'buttons'>Initiatives</button>
                 <button id = 'news-button' class = 'buttons'>Newsletter</button>
-                <button id="signup-button" class = "buttons">My Learning</button>
+                <button id="signup-button" class = "buttons">Login</button>
     
             </ul>
             <div class = "profile-icon"> <!--this is where the profile icon will be, but should be hidden if not logged in-->
@@ -33,32 +33,32 @@
         <div class = "image-entry">
             <div class="mySlides">
                 <div class="numbertext">1 / 6</div>
-                <img src=" public/photos/1.png" style="width:100%; height: 30%">
+                <img src=" photos/1.png" style="width:100%; height: 30%">
             </div>
 
             <div class="mySlides">
                 <div class="numbertext">2 / 6</div>
-                <img src="public/photos/2.png" style="width:100%">
+                <img src="photos/2.png" style="width:100%">
             </div>
 
             <div class="mySlides">
                 <div class="numbertext">3 / 6</div>
-                <img src="public/photos/3.png" style="width:100%">
+                <img src="photos/3.png" style="width:100%">
             </div>
 
             <div class="mySlides">
                 <div class="numbertext">4 / 6</div>
-                <img src="public/photos/4.png" style="width:100%">
+                <img src="photos/4.png" style="width:100%">
             </div>
 
             <div class="mySlides">
                 <div class="numbertext">5 / 6</div>
-                <img src="public/photos/5.png" style="width:100%">
+                <img src="photos/5.png" style="width:100%">
             </div>
 
             <div class="mySlides">
                 <div class="numbertext">6 / 6</div>
-                <img src="public/photos/6.png" style="width:100%">
+                <img src="photos/6.png" style="width:100%">
             </div>
 
             <!-- Next and previous buttons -->
@@ -70,6 +70,26 @@
                 <p id="caption"></p>
             </div>
         </div>
+
+        <script>
+            let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex-1].style.display = "block";
+    }
+        </script>
+
         <div class = "content-entry">
         <p>
             During the week of spring break (3/25~3/27), members of the non-CT club, GEMS (Girls In Engineering, Mathematics, Science): Kyla Kim (G10), Jihu Kim (G10), Claire Ma(G10), Amy Son(G10), Jasmine Park (G9), led a volunteering event at the Baraka Small Library. The Baraka Small Library is located in a multicultural neighborhood called Itaewon serving as an after-school center for students whose parents work full-time and cannot care for them after school.
@@ -91,5 +111,5 @@
     
 
 </body>
-<script src="public/src/newsletter.js"></script>
+<script src="src/newsletter.js"></script>
 </html>
