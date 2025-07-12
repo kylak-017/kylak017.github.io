@@ -1,4 +1,4 @@
-import { auth, provider } from "../firebaseConfig";
+import { auth, provider } from "./firebaseConfig";
 import { signInWithPopup, getIdToken } from "firebase/auth";
 import { getAuth, GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 
@@ -15,7 +15,7 @@ document.getElementById("signup-button").addEventListener("click", async () => {
 
         // Send token to your backend server
         console.log("Fetching /verify-token"); // Before Fetch
-        const response = await fetch("http://localhost:3000/verify-token", {
+        const response = await fetch("/verify-token", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
