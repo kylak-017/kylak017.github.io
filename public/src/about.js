@@ -1,7 +1,7 @@
 //add in the newsletter css and the button configurations as the macbook tabs
 
-import { auth } from '../firebaseConfig.js';
-import { getRedirectResult, getIdToken, onAuthStateChanged } from '../firebaseConfig.js';
+import { auth } from './firebaseConfig.js';
+import { getRedirectResult, getIdToken, onAuthStateChanged } from './firebaseConfig.js';
 window.addEventListener("DOMContentLoaded", async () => {
     try {
             const result = await getRedirectResult(auth);

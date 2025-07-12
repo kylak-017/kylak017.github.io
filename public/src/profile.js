@@ -1,5 +1,5 @@
-import { db, auth } from '../firebaseConfig.js';
-import {doc, setDoc } from '../firebaseConfig.js'
+import { db, auth } from './firebaseConfig.js';
+import {doc, setDoc } from './firebaseConfig.js'
 
 //cuhange profile.css to contain the select with toudned radius
 
