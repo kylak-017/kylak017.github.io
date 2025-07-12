@@ -5,8 +5,8 @@ import { FontLoader } from "three/examples/jsm/loaders/FontLoader.js";
 import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 import { SVGLoader } from "three/examples/jsm/loaders/SVGLoader.js";
 import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
-import { auth } from '../firebaseConfig.js';
-import { getRedirectResult, getIdToken, onAuthStateChanged } from '../firebaseConfig.js';
+import { auth } from './firebaseConfig.js';
+import { getRedirectResult, getIdToken, onAuthStateChanged } from './firebaseConfig.js';
 
 window.addEventListener("DOMContentLoaded", async () => {
     try {

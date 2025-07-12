@@ -2,8 +2,8 @@
 
 
 
-import { auth } from '../firebaseConfig.js';
-import { getRedirectResult, getIdToken, onAuthStateChanged } from '../firebaseConfig.js';
+import { auth } from './firebaseConfig.js';
+import { getRedirectResult, getIdToken, onAuthStateChanged } from './firebaseConfig.js';
 document.addEventListener('DOMContentLoaded', function ()  {
   
   const about = document.getElementById("about-button");
