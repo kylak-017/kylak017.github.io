@@ -100,13 +100,13 @@ if(newsletter){
 
     
 
-        loaderBack.load ('./models/stars.jpg', function (texture) { //a function of this class function is called
+        loaderBack.load ('models/stars.jpg', function (texture) { //a function of this class function is called
             scene.background = texture; // implementing a function such that the scene's bacgkroyd is set to the the texture brought by the image.
         });
     
 
         loaderText1 = new FontLoader();
-        loaderText1.load( './fonts/helvetiker_regular.typeface.json', function ( font ) {
+        loaderText1.load( 'fonts/helvetiker_regular.typeface.json', function ( font ) {
 
             const color = new THREE.Color( 0xf7c614 );
 
@@ -192,7 +192,7 @@ if(newsletter){
         
 
         const loaderText2 = new FontLoader();
-        loaderText2.load( './fonts/helvetiker_regular.typeface.json', function ( font ) {
+        loaderText2.load( 'fonts/helvetiker_regular.typeface.json', function ( font ) {
 
             const color = new THREE.Color( 0xffb0fb );
 
@@ -345,8 +345,8 @@ const parent = new THREE.Group();
 scene.add(parent);
 
 
-const earth = './models/globe.glb'; // Or '/models/my-model.glb' for binary
-const mercury = './models/mer.glb'; // Or '/models/my-model.glb' for binary
+const earth = 'models/globe.glb'; // Or '/models/my-model.glb' for binary
+const mercury = 'models/mer.glb'; // Or '/models/my-model.glb' for binary
 loadModel(earth, { x: 3, y: 0, z: 300 }, 50);
 loadModel(mercury, { x: -5, y: 20, z: 350 }, 3);
 
