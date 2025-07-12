@@ -1,0 +1,268 @@
+
+/* Global styles */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  background: #fae1fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Press Start 2P', cursive;
+  color: #ad016b;
+  text-align: center;
+
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 100%;
+  height: 100%;
+  color: #333; /* Neutral dark gray for readability */
+  background-image: url(/models/stars.png);
+
+  
+}
+
+.threejs-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+ 
+}
+
+/* Call-to-action button */
+/*
+.buttons {
+  background-color: #ff007f; 
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-right: 2rem;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  text-align: center;
+  text-wrap: normal;
+}
+
+.buttons:hover {
+  background-color: #ff66a3;
+  color: #000;
+  transform: scale(1.08);
+}
+
+*/
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.buttons {
+  background-color: #e979a6;
+  border: none;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 15px 22px;
+  font-size: 16px;
+  color: #580042;
+  border-radius: 12px;
+  font-family: 'Press Start 2P', cursive;
+  justify-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px #ffffff;
+  cursor: pointer;
+  transition: transform 0.3s;
+  margin-right: 10px;
+}
+
+.action-button:hover {
+  background-color: #52b788;
+  transform: scale(1.1);
+}
+
+.navbar-logo{
+  float: left;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffc118; /* Energetic yellow */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-left: 60px;
+  height: 50%;
+
+}
+
+.logo{
+  width: 50%;
+  height: 50%;
+  border-color: #ffc118;
+  border-width: 2px;
+  border-style: solid;
+  margin-top: 30px;
+  border-radius: 10%;
+  
+}
+
+.navbar {
+  position: fixed;  /* Fix the navbar at the top of the page */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffc118;  /* Dark background for the navbar */
+  z-index: 1000;  /* Ensure it's on top of other elements */
+  padding: 10px 0;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;  /* Space out items on the left and right */
+  align-items: center;
+  padding: 0 20px;  /* Add some padding to the left and right */
+  margin-bottom: 20px;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for each individual link */
+.navbar-links li {
+  margin-left: 20px;  /* Add some space between links */
+}
+
+.navbar-links a {
+  color: #000000;
+  text-decoration: none;
+  padding: 8px 16px;
+  display: block;
+  transition: background-color 0.3s ease;  /* Smooth transition for hover effect */
+}
+
+/* Hover effect for links */
+.navbar-links a:hover {
+  background-color: #ffd04d;  /* Slightly lighter background on hover */
+  border-radius: 4px;  /* Round corners for the hover effect */
+}
+
+/* Responsive design: Navbar adapts to smaller screens */
+@media (max-width: 768px) {
+  .navbar-container {
+      flex-direction: column;  /* Stack the items vertically */
+      align-items: flex-start;  /* Align items to the left */
+  }
+
+  .navbar-links {
+      flex-direction: column;  /* Stack links vertically on small screens */
+      margin-top: 10px;
+  }
+
+  .navbar-links li {
+      margin-left: 0;  /* Remove left margin for stacked links */
+      margin-bottom: 10px;
+  }
+}
+
+.navbar-logo{
+  float: left;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffc118; /* Energetic yellow */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-left: 400px;
+  height: 80%;
+
+}
+
+.logo{
+  width: 60%;
+  height: 60%;
+  border-color: #ffc118;
+  border-radius: 20px;
+  border-width: 2px;
+  border-style: solid;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  
+}
+.navbar-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffc118; /* Energetic yellow */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  margin-left: 32px;
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.navbar-links a:hover {
+  background-color: #ffc118; /* Yellow for hover */
+  color: #000;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .navbar-links li {
+    margin-left: 0;
+    margin-bottom: 12px;
+  }
+
+  .navbar-links a {
+    width: 100%;
+  }
+}

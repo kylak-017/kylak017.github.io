@@ -1,10 +1,10 @@
-import * as THREE from '/node_modules/three';
-import { GLTFLoader } from '/node_modules/three/examples/jsm/loaders/GLTFLoader.js';
-import { OrbitControls } from '/node_modules/three/addons/controls/OrbitControls.js';
-import { FontLoader } from "/node_modules/three/examples/jsm/loaders/FontLoader.js";
-import { TextGeometry } from '/node_modules/three/addons/geometries/TextGeometry.js';
-import { SVGLoader } from "/node_modules/three/examples/jsm/loaders/SVGLoader.js";
-import { GUI } from '/node_modules/three/addons/libs/lil-gui.module.min.js';
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { FontLoader } from "three/examples/jsm/loaders/FontLoader.js";
+import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
+import { SVGLoader } from "three/examples/jsm/loaders/SVGLoader.js";
+import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
 import { auth } from '../firebaseConfig.js';
 import { getRedirectResult, getIdToken, onAuthStateChanged } from '../firebaseConfig.js';
 
