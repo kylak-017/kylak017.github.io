@@ -103,16 +103,111 @@
 }
 
 body {
-  background: #fae1fa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-family: 'Press Start 2P', cursive;
+  background-color: #ffd1fa;
+  margin: 0;
+  padding: 0;
+  font-family: "Gill Sans Extrabold", sans-serif;
+  font-size: 16px;
   color: #ad016b;
   text-align: center;
   position: absolute;
-  overflow-y:auto;
+  overflow-y: auto;
+}
+
+/* Folder Tab Styles */
+#tabs {
+  position: relative;
+  margin-top: 150px;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.folder-tab {
+  height: 36px;
+  position: relative;
+  top: 10px;
+  background-color: #FcFcfc;
+  left: 28px;
+  display: inline-block;
+  z-index: 2;
+  margin-right: 50px;
+  color: #A3B4C9;
+  cursor: pointer;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.folder-tab.selected,
+.folder-tab:hover {
+  z-index: 3;
+  color: #788EAB;
+  background-color: #FFF;
+}
+
+.folder-tab.selected:before,
+.folder-tab.selected:after,
+.folder-tab:hover:before,
+.folder-tab:hover:after {
+  background-color: #FFF;
+}
+
+.folder-tab:before {
+  height: 36px;
+  width: 30px;
+  border-radius: 10px 10px 0px 0px;
+  background-color: #FcFcfc;
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 0px;
+  -webkit-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+  z-index: -1;
+}
+
+.folder-tab:after {
+  height: 36px;
+  width: 30px;
+  border-radius: 10px 10px 0px 0px;
+  background-color: #FcFcfc;
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 0px;
+  -webkit-transform: skewX(20deg);
+  transform: skewX(20deg);
+  z-index: -1;
+}
+
+.folder-tab span {
+  display: inline-block;
+  margin-left: 8px;
+  margin-right: 8px;
+  height: 36px;
+  line-height: 40px;
+  z-index: 3;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+}
+
+#page {
+  background-color: white;
+  height: calc(100vh - 120px);
+  width: calc(100vw - 61px);
+  position: relative;
+  top: 10px;
+  left: 1px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  z-index: 1;
+  margin-left: 30px;
+}
+
+#title{
+  font-family: 'Press Start 2P', cursive;
+  
 }
 
 .contianer{
@@ -165,27 +260,24 @@ body {
   margin-bottom:10px;
 }
 .container-entry{
-    margin-top: 100px;
-    display:flex;
-     /* Add these */
+    margin-top: 20px;
+    display: flex;
     word-break: break-word;
     overflow-wrap: break-word;
     white-space: normal;
     padding: 16px;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 80%;
-    overflow-y:auto;
-    height: 65%;
-    background-color: #ffffff; /* Light background for the container */
-    border-radius: 0%; /*can change */
-    position: relative; /* For absolute positioning of the profile icon */
+    justify-content: flex-start;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 0%;
+    position: relative;
 }
 
 .title-entry{
     color: #ad016b; /* Dark pink for the title */
-    margin-top: 1800px;
+    margin-top: 20px;
     text-shadow: 2px 2px #ffffff; /* Subtle shadow for depth */
     text-align: center;
 }
@@ -205,9 +297,9 @@ body {
 
 }
 .content-entry{
-    margin-top: 500px;
+    margin-top: 30px;
     position: relative;
-
+    width: 100%;
 }
 h2{
     line-height: 1.5;
@@ -233,27 +325,51 @@ p{
   transform: scale(1.1);
 }
 
-.navbar-logo{
-  float: left;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #ffc118; /* Energetic yellow */
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-left: 60px;
-  height: 50%;
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
 
+.buttons {
+  background-color: #e979a6;
+  border: none;
+  margin: 20px 8px 10px 8px;
+  padding: 18px 28px;
+  font-size: 18px;
+  color: #940349;
+  border-radius: 12px;
+  font-family: 'Press Start 2P', cursive;
+  box-shadow: 2px 2px #ffffff;
+  cursor: pointer;
+  transition: transform 0.3s;
+  min-width: 120px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.buttons:hover {
+  background-color: #ff66a3;
+  transform: scale(1.05);
+  box-shadow: 3px 3px #ffffff;
+}
+
+.navbar-logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 20px 20px 10px 20px;
 }
 
 .logo{
-  width: 50%;
-  height: 50%;
+  width: 150px;
+  height: 80px;
   border-color: #ffc118;
   border-width: 2px;
   border-style: solid;
-  margin-top: 12px;
-  border-radius: 10%;
-  
+  border-radius: 10px;
+  object-fit: contain;
 }
 
 .navbar {
@@ -264,7 +380,6 @@ p{
   background-color: #ffc118;  /* Dark background for the navbar */
   z-index: 1000;  /* Ensure it's on top of other elements */
   padding: 10px 0;
-  margin-bottom: 40px;
 }
 
 .navbar-container {
@@ -272,6 +387,8 @@ p{
   justify-content: space-between;  /* Space out items on the left and right */
   align-items: center;
   padding: 0 20px;  /* Add some padding to the left and right */
+  margin-bottom: 20px;
+  min-height: 80px;
 }
 
 .navbar-links {
@@ -283,7 +400,7 @@ p{
 
 /* Style for each individual link */
 .navbar-links li {
-  margin-left: 20px;  /* Add some space between links */
+  margin-left: 0;  /* Remove margin since we're using gap */
 }
 
 .navbar-links a {
@@ -316,9 +433,79 @@ p{
       margin-left: 0;  /* Remove left margin for stacked links */
       margin-bottom: 10px;
   }
+}
 
+.navbar-logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 20px 20px 10px 20px;
+}
 
+.logo{
+  width: 150px;
+  height: 80px;
+  border-color: #ffc118;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  object-fit: contain;
+}
+.navbar-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffc118; /* Energetic yellow */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
 
+.navbar-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  margin-left: 32px;
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.navbar-links a:hover {
+  background-color: #ffc118; /* Yellow for hover */
+  color: #000;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .navbar-links li {
+    margin-left: 0;
+    margin-bottom: 12px;
+  }
+
+  .navbar-links a {
+    width: 100%;
+  }
 }
 
 @keyframes fadeIn {

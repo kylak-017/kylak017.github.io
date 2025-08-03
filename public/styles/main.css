@@ -78,52 +78,46 @@ body {
   justify-content: center;
   margin-top: 20px;
 }
+
 .buttons {
   background-color: #e979a6;
   border: none;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding: 15px 22px;
-  font-size: 16px;
-  color: #580042;
+  margin: 20px 8px 10px 8px;
+  padding: 18px 28px;
+  font-size: 18px;
+  color: #940349;
   border-radius: 12px;
   font-family: 'Press Start 2P', cursive;
-  justify-items: center;
-  justify-content: center;
   box-shadow: 2px 2px #ffffff;
   cursor: pointer;
   transition: transform 0.3s;
-  margin-right: 10px;
+  min-width: 120px;
+  text-align: center;
+  font-weight: bold;
 }
 
-.action-button:hover {
-  background-color: #52b788;
-  transform: scale(1.1);
+.buttons:hover {
+  background-color: #ff66a3;
+  transform: scale(1.05);
+  box-shadow: 3px 3px #ffffff;
 }
 
 .navbar-logo{
-  float: left;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #ffc118; /* Energetic yellow */
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-left: 60px;
-  height: 50%;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 20px 20px 10px 20px;
 }
 
 .logo{
-  width: 50%;
-  height: 50%;
+  width: 150px;
+  height: 80px;
   border-color: #ffc118;
   border-width: 2px;
   border-style: solid;
-  margin-top: 30px;
-  border-radius: 10%;
-  
+  border-radius: 10px;
+  object-fit: contain;
 }
 
 .navbar {
@@ -142,6 +136,7 @@ body {
   align-items: center;
   padding: 0 20px;  /* Add some padding to the left and right */
   margin-bottom: 20px;
+  min-height: 80px;
 }
 
 .navbar-links {
@@ -153,7 +148,7 @@ body {
 
 /* Style for each individual link */
 .navbar-links li {
-  margin-left: 20px;  /* Add some space between links */
+  margin-left: 0;  /* Remove margin since we're using gap */
 }
 
 .navbar-links a {
@@ -189,27 +184,21 @@ body {
 }
 
 .navbar-logo{
-  float: left;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #ffc118; /* Energetic yellow */
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-left: 400px;
-  height: 80%;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 20px 20px 10px 20px;
 }
 
 .logo{
-  width: 60%;
-  height: 60%;
+  width: 150px;
+  height: 80px;
   border-color: #ffc118;
-  border-radius: 20px;
+  border-radius: 10px;
   border-width: 2px;
   border-style: solid;
-  margin-top: 10px;
-  margin-bottom: 15px;
-  
+  object-fit: contain;
 }
 .navbar-title {
   font-size: 1.8rem;
@@ -265,4 +254,37 @@ body {
   .navbar-links a {
     width: 100%;
   }
+}
+
+/* Bottom right text styling */
+.bottom-right-text {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: rgba(233, 121, 166, 0.9);
+  color: #940349;
+  padding: 15px 20px;
+  border-radius: 12px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+  box-shadow: 2px 2px #ffffff;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 400px;
+  text-align: center;
+  border: 2px solid #ffc118;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.globe-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.text-content {
+  line-height: 1.4;
 }
