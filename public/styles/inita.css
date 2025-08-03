@@ -11,9 +11,16 @@
   z-index: 2;
   position: absolute;
   top:200px;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  max-width: 800px;
   display: none;
+}
+
+#init-image, #init2-image, #init3-image {
+  display: block;
+  height: auto;
+  width: 100%
+
 }
 
 #close{
@@ -22,7 +29,7 @@
   position: absolute;
   margin: 0 auto;
   left: 50%;
-  bottom: 100px;
+  bottom: 37%;
   transform: translateX(-50%);
   text-align: center;
 
