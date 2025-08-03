@@ -8,6 +8,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   const about = document.getElementById("about-button");
     const inita = document.getElementById("init-button");
     const newsletter = document.getElementById("news-button");
+    const close = document.getElementById("close");
 
 
     if(about){
@@ -28,26 +29,51 @@ window.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
+    if(close){
+        close.addEventListener("click", () => {
+        document.getElementById("initp1").style.display = "none";
+        document.getElementById("initp2").style.display = "none";
+        document.getElementById("initp3").style.display = "none";
+        document.getElementById("close").style.display = "none";
+        });
+
+    }
+
     document.getElementById('click-zone').addEventListener('click', function(e) {
-  const rect = this.getBoundingClientRect();
-  const x = e.clientX - rect.left;
-  const y = e.clientY - rect.top;
+        document.getElementById("initp1").style.display = "none";
+        document.getElementById("initp2").style.display = "none";
+        document.getElementById("initp3").style.display = "none";
+        document.getElementById("close").style.display = "none";
 
-  // Optionally normalize to % for responsiveness
-  const percentX = (x / rect.width) * 100;
-  const percentY = (y / rect.height) * 100;
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
 
-  console.log(`Clicked at: ${x}px, ${y}px`);
-  console.log(`Or: ${percentX.toFixed(2)}%, ${percentY.toFixed(2)}%`);
+        if (510 <= y && y <= 900 && 80 <= x && x < 450) {
+            document.getElementById("initp1").style.display = "block";
+            document.getElementById("close").style.display = "block";
+            
+        }
 
-  // Trigger actions based on position
-  if (percentX > 25 && percentX < 35 && percentY > 30 && percentY < 40) {
-    alert("You clicked on 'Cooperate'");
-  } else if (percentX > 45 && percentX < 55 && percentY > 50 && percentY < 60) {
-    alert("You clicked on 'Spread'");
-  } else if (percentX > 65 && percentX < 75 && percentY > 70 && percentY < 80) {
-    alert("You clicked on 'Share'");
-  }
-});
+        if (510 <= y && y <= 900 && 547 <= x && x < 870) {
+            document.getElementById("initp2").style.display = "block";
+            document.getElementById("close").style.display = "block";
+            
+        }
+
+        if (510 <= y && y <= 900 && 950 <= x && x < 1280) {
+            document.getElementById("initp3").style.display = "block";
+            document.getElementById("close").style.display = "block";
+            
+        }
+
+        // Optionally normalize to % for responsiveness
+        const percentX = (x / rect.width) * 100;
+        const percentY = (y / rect.height) * 100;
+
+        console.log(`Clicked at: ${x}px, ${y}px`);
+        console.log(`Or: ${percentX.toFixed(2)}%, ${percentY.toFixed(2)}%`);
+
+        });
 
 });

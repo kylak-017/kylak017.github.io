@@ -1,5 +1,5 @@
-import { auth, provider } from "./firebaseConfig";
 import { signInWithPopup, getIdToken } from "firebase/auth";
+import { auth, provider } from "./firebaseConfig";
 import { getAuth, GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 
 

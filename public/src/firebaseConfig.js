@@ -16,4 +16,4 @@ const provider = new GoogleAuthProvider();
 
 
 
-export {db, auth, provider, GoogleAuthProvider, doc, setDoc, getDoc, signInWithRedirect, getRedirectResult, getIdToken, onAuthStateChanged, signInWithPopup };
+export {db, auth, provider, GoogleAuthProvider, getAuth, doc, setDoc, getDoc, signInWithRedirect, getRedirectResult, getIdToken, onAuthStateChanged, signInWithPopup };
