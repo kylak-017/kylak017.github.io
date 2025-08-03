@@ -65,7 +65,7 @@ window.addEventListener("DOMContentLoaded", async () => {
             
         }
 
-        if (510 <= y && y <= 900 && 890 <= x && x < 1700) {
+        if (510 <= y && y <= 900 && 890 <= x && x < 1750) {
             document.getElementById("initp3").style.display = "block";
             document.getElementById("close").style.display = "block";
             document.getElementById("click-zone").style.display = "none";
