@@ -6,44 +6,41 @@ import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 import { SVGLoader } from "three/examples/jsm/loaders/SVGLoader.js";
 import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
 import { auth } from './firebaseConfig.js';
-import { getRedirectResult, getIdToken, onAuthStateChanged } from './firebaseConfig.js';
+import { provider, signInWithPopup, getIdToken } from "./firebaseConfig.js";
 
-window.addEventListener("DOMContentLoaded", async () => {
-    try {
-        const result = await getRedirectResult(auth);
-        if (result) {
+
+document.addEventListener("DOMContentLoaded", () => {
+    const signupButton = document.getElementById("signup-button");
+
+    if (signupButton) {
+        signupButton.addEventListener("click", async () => {
+        try {
+            const result = await signInWithPopup(auth, provider);
             const user = result.user;
             const idToken = await getIdToken(user);
 
             console.log("User ID Token:", idToken);
 
             const response = await fetch("/verify-token", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${idToken}`
-                }
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${idToken}`
+            }
             });
-
 
             const data = await response.json();
             if (response.ok) {
-               setTimeout(() => window.location.href = '/profile.html', 0);
+            window.location.href = "/profile.html";
             } else {
-                console.error("Token verification failed:", data);
+            console.error("Token verification failed:", data);
             }
-
-            onAuthStateChanged(auth, (user) => {
-                if (user) {
-                    // Handle token verification and redirection here
-                    verifyTokenAndRedirect(user);
-                }
-            });
+        } catch (error) {
+            console.error("Sign-in failed:", error.code, error.message);
+            alert("Sign-in failed: " + error.message);
         }
-    } catch (error) {
-        console.error("Error during redirect result handling:", error);
+        });
     }
-
 
 //All Buttons
 
