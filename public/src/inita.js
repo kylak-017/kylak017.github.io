@@ -29,23 +29,16 @@ window.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
-    if(close){
-        close.addEventListener("click", () => {
-        document.getElementById("initp1").style.display = "none";
-        document.getElementById("initp2").style.display = "none";
-        document.getElementById("initp3").style.display = "none";
-        document.getElementById("close").style.display = "none";
-         document.getElementById("click-zone").style.display = "block";
-        });
+   
 
-    }
-
+    
     document.getElementById('click-zone').addEventListener('click', function(e) {
         document.getElementById("initp1").style.display = "none";
         document.getElementById("initp2").style.display = "none";
         document.getElementById("initp3").style.display = "none";
-        document.getElementById("close").style.display = "none";
         document.getElementById("click-zone").style.display = "block";
+
+      
 
         const rect = this.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -53,22 +46,19 @@ window.addEventListener("DOMContentLoaded", async () => {
 
         if (510 <= y && y <= 900 && 80 <= x && x < 450) {
             document.getElementById("initp1").style.display = "block";
-            document.getElementById("close").style.display = "block";
-            document.getElementById("click-zone").style.display = "none";
+      
             
         }
 
         if (510 <= y && y <= 900 && 547 <= x && x < 870) {
             document.getElementById("initp2").style.display = "block";
-            document.getElementById("close").style.display = "block";
-            document.getElementById("click-zone").style.display = "none";
+
             
         }
 
         if (510 <= y && y <= 900 && 890 <= x && x < 1750) {
             document.getElementById("initp3").style.display = "block";
-            document.getElementById("close").style.display = "block";
-            document.getElementById("click-zone").style.display = "none";
+  
             
         }
 
@@ -80,5 +70,15 @@ window.addEventListener("DOMContentLoaded", async () => {
         console.log(`Or: ${percentX.toFixed(2)}%, ${percentY.toFixed(2)}%`);
 
         });
+
+    document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        document.getElementById("initp1").style.display = "none";
+        document.getElementById("initp2").style.display = "none";
+        document.getElementById("initp3").style.display = "none";
+        document.getElementById("click-zone").style.display = "block";
+    }
+    });
+
 
 });

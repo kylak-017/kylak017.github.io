@@ -12,13 +12,12 @@
   position: absolute;
   top:200px;
   width: 100%;
-  max-width: 800px;
   display: none;
 }
 
 #init-image, #init2-image, #init3-image {
   display: block;
-  height: auto;
+  height: 100%;
   width: 100%;
   display: flex; 
 
