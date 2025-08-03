@@ -19,7 +19,8 @@
 #init-image, #init2-image, #init3-image {
   display: block;
   height: auto;
-  width: 100%
+  width: 100%;
+  display: flex; 
 
 }
 
@@ -185,6 +186,7 @@ body {
   background-position: center;
   position: relative;
   cursor: crosshair;
+  display: block;
 }
 
 #share{

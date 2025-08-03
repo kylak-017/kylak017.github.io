@@ -9,7 +9,7 @@ import { auth } from './firebaseConfig.js';
 import { getRedirectResult, getIdToken, onAuthStateChanged } from './firebaseConfig.js';
 
 window.addEventListener("DOMContentLoaded", async () => {
-    try {
+     try {
         const result = await getRedirectResult(auth);
         if (result) {
             const user = result.user;
@@ -43,7 +43,6 @@ window.addEventListener("DOMContentLoaded", async () => {
     } catch (error) {
         console.error("Error during redirect result handling:", error);
     }
-
 
 //All Buttons
 
