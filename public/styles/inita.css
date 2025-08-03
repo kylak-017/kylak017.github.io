@@ -11,8 +11,8 @@
   z-index: 2;
   position: absolute;
   top:200px;
-  width: 150%;
-  height: 150%;
+  width: 100vw;
+  height: 100vh;
   display: none;
 }
 
