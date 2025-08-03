@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 
 // --- Middleware ---
 const corsOptions = {
-  origin: 'http://127.0.0.1:5174', // For local dev, change/remove in production!
+  origin: ['http://127.0.0.1:5174', 'https://www.gems-stem.com', 'https://gems-app-c014a7288035.herokuapp.com'], // For local dev, change/remove in production!
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
