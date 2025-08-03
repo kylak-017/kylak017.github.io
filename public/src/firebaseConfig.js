@@ -5,7 +5,7 @@ import { doc, setDoc, getDoc } from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: 'AIzaSyBiz3hf2uZWqsOAHu7CVUOmru-wkHZ8NXY',
-    authDomain: 'gems-350b8.firebaseapp.com',
+    authDomain: 'gems-app-c014a7288035.herokuapp.com',
     projectId: "gems-350b8",
 };
 

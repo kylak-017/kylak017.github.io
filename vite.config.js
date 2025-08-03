@@ -13,8 +13,19 @@ export default {
     }
   },
     server: {
-      port: 5174
+    host: '127.0.0.1',
+    port: 5174,
+    strictPort: true,
+    cors: true,
+    headers: {
+      'Cross-Origin-Opener-Policy': 'same-origin',
+      'Cross-Origin-Embedder-Policy': 'require-corp', // remove if unnecessary
+    },
+    proxy: {
+      '/verify-token': 'http://localhost:3000',
+      '/api': 'http://localhost:3000',
     }
+  }
     ,
     base: 
     '/'
