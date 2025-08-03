@@ -71,7 +71,15 @@ document.addEventListener('DOMContentLoaded', function ()  {
         });
     }
 
-
-
+    // Tab functionality
+    const tabs = document.querySelectorAll('.folder-tab');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove selected class from all tabs
+            tabs.forEach(t => t.classList.remove('selected'));
+            // Add selected class to clicked tab
+            tab.classList.add('selected');
+        });
+    });
 
 });

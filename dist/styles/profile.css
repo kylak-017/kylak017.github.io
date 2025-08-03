@@ -130,7 +130,7 @@ body {
     padding: 20px;
     width: fit-content;
     margin: 0 auto;
-    height: 200px;
+    height: 300px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     font-family: 'Press Start 2P', cursive; /* adjust as needed */
 }
@@ -156,7 +156,7 @@ body {
     font-family: inherit;
     align-items: center;
     position: absolute;
-    left: 26%;
+    left: 26%; 
     bottom: 65px;
     text-align: center;
 }
@@ -170,7 +170,7 @@ body {
     cursor: pointer;
     font-family: inherit;
     font-size: 14px;
-     position: absolute;
+    position: absolute;
     left: 37.5%;
     top: 140px;
     transition: background-color 0.2s;
